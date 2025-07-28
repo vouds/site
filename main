@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chill Aesthetic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      font-family: 'Poppins', sans-serif;
+      color: #555;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      color: #6b4f4f;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #8b7a7a;
+      font-weight: 200;
+    }
+  </style>
+</head>
+<body>
+  <h1>welcome to voud.xyz</h1>
+  <p>t.me/ogostock</p>
+
+  <footer>hi</footer>
+</body>
+</html>
