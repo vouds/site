@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>join t.me/ogoaccounts</title>
+  <title>Chill Aesthetic</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
@@ -19,7 +19,6 @@
 
     body {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -59,31 +58,92 @@
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2) 100px, transparent 200px);
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35) 150px, transparent 300px);
       z-index: 0;
+      transition: background 0.05s ease;
+    }
+
+    #content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      position: relative;
+    }
+
+    #enter-screen {
+      position: absolute;
+      z-index: 10;
+      background: black;
+      color: white;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+    }
+
+    #enter-screen h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #enter-screen p {
+      font-size: 1rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
   <div id="overlay"></div>
 
-  <h1>welcome to voud.xyz</h1>
-  <p>t.me/ogostock</p>
-  <footer>hi</footer>
+  <div id="enter-screen" onclick="enterSite()">
+    <h2>Click to Enter</h2>
+    <p>sound on</p>
+  </div>
 
-  <!-- Audio: Shoota from Archive.org -->
-  <audio autoplay loop>
+  <div id="content">
+    <h1>welcome to voud.xyz</h1>
+    <p>t.me/ogoscammer</p>
+    <footer>hi</footer>
+  </div>
+
+  <audio id="bg-music" loop>
     <source src="https://archive.org/download/playboi-carti-shoota-audio-ft.-lil-uzi-vert_202011/Playboi%20Carti%20-%20Shoota%20%28Audio%29%20ft.%20Lil%20Uzi%20Vert.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
   <script>
     const overlay = document.getElementById('overlay');
+
     document.addEventListener('mousemove', (e) => {
       const x = e.clientX;
       const y = e.clientY;
-      overlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15) 120px, transparent 220px)`;
+      overlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.35) 150px, transparent 300px)`;
     });
+
+    function enterSite() {
+      const audio = document.getElementById('bg-music');
+      const content = document.getElementById('content');
+      const enterScreen = document.getElementById('enter-screen');
+
+      enterScreen.style.opacity = 0;
+      setTimeout(() => {
+        enterScreen.style.display = 'none';
+        content.style.display = 'flex';
+      }, 500);
+
+      audio.play().catch(err => {
+        alert("Autoplay blocked. Please interact with the page again.");
+        console.error(err);
+      });
+    }
   </script>
 </body>
 </html>
