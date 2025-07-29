@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,25 +7,31 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-    body {
+    html, body {
       margin: 0;
-      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
       font-family: 'Poppins', sans-serif;
-      color: #555;
+      color: #fff;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
-      padding: 20px;
     }
 
     h1 {
       font-weight: 300;
       font-size: 3rem;
       margin-bottom: 0.5em;
-      color: #6b4f4f;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
     }
 
     p {
@@ -33,21 +39,51 @@
       font-size: 1.2rem;
       max-width: 600px;
       line-height: 1.5;
+      z-index: 1;
+      position: relative;
     }
 
     footer {
       position: fixed;
       bottom: 10px;
       font-size: 0.9rem;
-      color: #8b7a7a;
+      color: #aaa;
       font-weight: 200;
+      z-index: 1;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2) 100px, transparent 200px);
+      z-index: 0;
     }
   </style>
 </head>
 <body>
+  <div id="overlay"></div>
+
   <h1>welcome to voud.xyz</h1>
   <p>t.me/ogostock</p>
-
   <footer>hi</footer>
+
+  <!-- Audio: Shoota from Archive.org -->
+  <audio autoplay loop>
+    <source src="https://archive.org/download/playboi-carti-shoota-audio-ft.-lil-uzi-vert_202011/Playboi%20Carti%20-%20Shoota%20%28Audio%29%20ft.%20Lil%20Uzi%20Vert.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      overlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.15) 120px, transparent 220px)`;
+    });
+  </script>
 </body>
 </html>
