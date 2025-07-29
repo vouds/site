@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chill Aesthetic</title>
+  <title>voud.xyz</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
@@ -22,6 +22,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      flex-direction: column;
     }
 
     h1 {
@@ -33,13 +34,19 @@
       z-index: 1;
     }
 
-    p {
-      font-weight: 300;
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.5;
+    .links a {
+      display: block;
+      margin: 8px 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
       z-index: 1;
       position: relative;
+    }
+
+    .links a:hover {
+      color: #ccc;
     }
 
     footer {
@@ -58,7 +65,7 @@
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35) 150px, transparent 300px);
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35) 60px, transparent 120px);
       z-index: 0;
       transition: background 0.05s ease;
     }
@@ -110,7 +117,10 @@
 
   <div id="content">
     <h1>welcome to voud.xyz</h1>
-    <p>t.me/ogoscammer</p>
+    <div class="links">
+      <a href="https://t.me/ogoscammer" target="_blank">telegram: @ogoscammer</a>
+      <a href="https://instagram.com/misdoubted" target="_blank">instagram: @misdoubted</a>
+    </div>
     <footer>hi</footer>
   </div>
 
@@ -125,7 +135,7 @@
     document.addEventListener('mousemove', (e) => {
       const x = e.clientX;
       const y = e.clientY;
-      overlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.35) 150px, transparent 300px)`;
+      overlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.35) 60px, transparent 120px)`;
     });
 
     function enterSite() {
@@ -140,7 +150,7 @@
       }, 500);
 
       audio.play().catch(err => {
-        alert("Autoplay blocked. Please interact with the page again.");
+        alert("Autoplay blocked. Please click again to play music.");
         console.error(err);
       });
     }
